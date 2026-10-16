@@ -1,9 +1,8 @@
 {
   "manifest_version": 3,
-  "default_locale": "en",
-  "name": "__MSG_extensionName__",
-  "version": "1.0.1",
-  "description": "__MSG_extensionDescription__",
+  "name": "EasyCopy - 全网自由复制与网页限制解除专家",
+  "version": "1.0.0",
+  "description": "纯净无广告！一键解除百度文库、知乎、CSDN、360文档等全网网站的禁止复制、禁止右键、禁止选中、关注公众号扫码及登录限制，自动移除版权牛皮癣小尾巴，自动展开全文。",
   "icons": {
     "16": "icons/icon16.png",
     "48": "icons/icon48.png",
@@ -11,50 +10,38 @@
   },
   "action": {
     "default_popup": "popup/popup.html",
-    "default_title": "EasyCopy PRO Control Panel",
     "default_icon": {
       "16": "icons/icon16.png",
       "48": "icons/icon48.png",
       "128": "icons/icon128.png"
-    }
-  },
-  "background": {
-    "service_worker": "background/service-worker.js"
+    },
+    "default_title": "EasyCopy 自由复制控制台"
   },
   "permissions": [
     "storage",
     "activeTab",
-    "scripting"
+    "scripting",
+    "tabs"
   ],
   "host_permissions": [
     "<all_urls>"
   ],
+  "background": {
+    "service_worker": "background/service-worker.js"
+  },
   "content_scripts": [
     {
-      "matches": [
-        "<all_urls>"
-      ],
-      "css": [
-        "content/content.css"
-      ],
-      "js": [
-        "content/content.js"
-      ],
+      "matches": ["<all_urls>"],
+      "js": ["content/content.js"],
+      "css": ["content/content.css"],
       "run_at": "document_start",
-      "all_frames": true,
-      "match_about_blank": true
+      "all_frames": true
     }
   ],
   "web_accessible_resources": [
     {
-      "resources": [
-        "content/content.css",
-        "icons/icon128.png",
-        "assets/wechat_sponsor.png"
-      ],
-      "matches": [
-        "<all_urls>"
-      ]
+      "resources": ["content/page-injector.js"],
+      "matches": ["<all_urls>"]
     }
   ]
 }
