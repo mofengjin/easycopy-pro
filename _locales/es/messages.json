@@ -1,0 +1,115 @@
+{
+  "extensionName": {
+    "message": "EasyCopy PRO: Desbloqueador de clic derecho y copia",
+    "description": "Nombre de la extensión"
+  },
+  "extensionDescription": {
+    "message": "Desbloquea el clic derecho, selección de texto, copia y pegado forzado en sitios restringidos.",
+    "description": "Descripción de la extensión"
+  },
+  "statusActive": {
+    "message": "Activo"
+  },
+  "statusDisabled": {
+    "message": "Desactivado"
+  },
+  "tagline": {
+    "message": "Desbloqueador universal de texto y copia"
+  },
+  "freeTier": {
+    "message": "EDICIÓN GRATUITA"
+  },
+  "freeTierDesc": {
+    "message": "Desbloqueo web estándar habilitado"
+  },
+  "proTier": {
+    "message": "ACCESO DE POR VIDA PRO"
+  },
+  "proTierDesc": {
+    "message": "Todos los motores de desbloqueo premium activos"
+  },
+  "btnActivatePro": {
+    "message": "Activar PRO"
+  },
+  "btnActivated": {
+    "message": "Activado"
+  },
+  "masterProtectionTitle": {
+    "message": "Protección Principal"
+  },
+  "masterProtectionDesc": {
+    "message": "Habilitar todas las funciones de desbloqueo"
+  },
+  "cleanCopyTitle": {
+    "message": "Copia Limpia de Portapapeles"
+  },
+  "cleanCopyDesc": {
+    "message": "Eliminar colas de derechos de autor y rastreo"
+  },
+  "forcePasteTitle": {
+    "message": "Pegado Forzado (Sin Límites)"
+  },
+  "forcePasteDesc": {
+    "message": "Permitir pegar en formularios y exámenes restringidos"
+  },
+  "floatingPillTitle": {
+    "message": "Burbuja Flotante Rápida"
+  },
+  "floatingPillDesc": {
+    "message": "Mostrar burbuja de copia al seleccionar texto"
+  },
+  "deblurTitle": {
+    "message": "Eliminador de Desenfoque"
+  },
+  "deblurDesc": {
+    "message": "Eliminar filtros de desenfoque en Scribd y Course Hero"
+  },
+  "extractArticleBtn": {
+    "message": "Extraer Artículo Completo en Markdown"
+  },
+  "recommendedTool": {
+    "message": "HERRAMIENTA RECOMENDADA"
+  },
+  "byCreator": {
+    "message": "Por el Creador"
+  },
+  "promoTitle": {
+    "message": "Optimizador Amazon PPC (5 en 1)"
+  },
+  "promoDesc": {
+    "message": "Calculadora de cero desperdicio publicitario para vendedores."
+  },
+  "learnMore": {
+    "message": "Saber Más &rarr;"
+  },
+  "footerOffline": {
+    "message": "100% Fuera de Línea y Privado"
+  },
+  "modalTitle": {
+    "message": "Desbloquear Acceso PRO de por Vida"
+  },
+  "modalDesc": {
+    "message": "Ingrese su clave de licencia de Gumroad para desbloquear todas las funciones."
+  },
+  "modalActivateBtn": {
+    "message": "Activar Licencia"
+  },
+  "modalGetLicenseBtn": {
+    "message": "Obtener Clave en Gumroad ($4.99)"
+  },
+  "btnSponsor": {
+    "message": "Patrocinar"
+  },
+  "sponsorTitle": {
+    "message": "Apoyar al Creador"
+  },
+  "sponsorDesc": {
+    "message": "¡Si EasyCopy PRO le ha sido útil, invite al creador a un refresco o apoye el proyecto!"
+  },
+  "sponsorWeChatTitle": {
+    "message": "WeChat Pay (Escanear QR)"
+  },
+  "sponsorGumroadBtn": {
+    "message": "Apoyar en Gumroad"
+  }
+}

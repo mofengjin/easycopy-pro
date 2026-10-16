@@ -1,8 +1,9 @@
 {
   "manifest_version": 3,
-  "name": "EasyCopy PRO: Right Click & Copy Unlocker",
-  "version": "1.0.0",
-  "description": "Unlock right-click, text selection, copy & force paste on restricted sites (Scribd, Course Hero, Medium & online tests).",
+  "default_locale": "en",
+  "name": "__MSG_extensionName__",
+  "version": "1.0.1",
+  "description": "__MSG_extensionDescription__",
   "icons": {
     "16": "icons/icon16.png",
     "48": "icons/icon48.png",
@@ -48,7 +49,8 @@
     {
       "resources": [
         "content/content.css",
-        "icons/icon128.png"
+        "icons/icon128.png",
+        "assets/wechat_sponsor.png"
       ],
       "matches": [
         "<all_urls>"

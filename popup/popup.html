@@ -19,30 +19,33 @@
         </div>
         <div class="brand-text">
           <h1>EasyCopy <span class="badge-pro">PRO</span></h1>
-          <p class="tagline">Universal Selection & Copy Unlocker</p>
+          <p class="tagline" data-i18n="tagline">Universal Selection & Copy Unlocker</p>
         </div>
       </div>
-      <div class="status-indicator" id="statusIndicator">
-        <span class="status-dot"></span>
-        <span class="status-text" id="statusText">Active</span>
+      <div class="header-actions">
+        <button class="btn-lang" id="btnToggleLang" title="Switch Language / 切换语言">中文</button>
+        <div class="status-indicator" id="statusIndicator">
+          <span class="status-dot"></span>
+          <span class="status-text" id="statusText" data-i18n="statusActive">Active</span>
+        </div>
       </div>
     </header>
 
     <!-- License Banner -->
     <div class="license-banner" id="licenseBanner">
       <div class="license-info">
-        <span class="license-tier" id="licenseTier">FREE EDITION</span>
-        <span class="license-desc" id="licenseDesc">Standard web unlocking enabled</span>
+        <span class="license-tier" id="licenseTier" data-i18n="freeTier">FREE EDITION</span>
+        <span class="license-desc" id="licenseDesc" data-i18n="freeTierDesc">Standard web unlocking enabled</span>
       </div>
-      <button class="btn-upgrade" id="btnUpgrade">Activate PRO</button>
+      <button class="btn-upgrade" id="btnUpgrade" data-i18n="btnActivatePro">Activate PRO</button>
     </div>
 
     <!-- Toggle Controls -->
     <div class="controls-card">
       <div class="control-row">
         <div class="control-label">
-          <span class="title">Master Protection</span>
-          <span class="subtitle">Enable all unlocking features</span>
+          <span class="title" data-i18n="masterProtectionTitle">Master Protection</span>
+          <span class="subtitle" data-i18n="masterProtectionDesc">Enable all unlocking features</span>
         </div>
         <label class="switch">
           <input type="checkbox" id="toggleEnabled" checked>
@@ -52,8 +55,8 @@
 
       <div class="control-row">
         <div class="control-label">
-          <span class="title">Clean Clipboard Copy</span>
-          <span class="subtitle">Strip copyright notice tails & spam</span>
+          <span class="title" data-i18n="cleanCopyTitle">Clean Clipboard Copy</span>
+          <span class="subtitle" data-i18n="cleanCopyDesc">Strip copyright notice tails & spam</span>
         </div>
         <label class="switch">
           <input type="checkbox" id="toggleRemoveTail" checked>
@@ -63,8 +66,8 @@
 
       <div class="control-row">
         <div class="control-label">
-          <span class="title">Force Paste (Bypass Limits)</span>
-          <span class="subtitle">Allow pasting in restricted forms & tests</span>
+          <span class="title" data-i18n="forcePasteTitle">Force Paste (Bypass Limits)</span>
+          <span class="subtitle" data-i18n="forcePasteDesc">Allow pasting in restricted forms & tests</span>
         </div>
         <label class="switch">
           <input type="checkbox" id="toggleForcePaste" checked>
@@ -74,8 +77,8 @@
 
       <div class="control-row">
         <div class="control-label">
-          <span class="title">Quick Floating Pill</span>
-          <span class="subtitle">Show auto-fading copy bubble on select</span>
+          <span class="title" data-i18n="floatingPillTitle">Quick Floating Pill</span>
+          <span class="subtitle" data-i18n="floatingPillDesc">Show auto-fading copy bubble on select</span>
         </div>
         <label class="switch">
           <input type="checkbox" id="toggleFloatingPill" checked>
@@ -85,8 +88,8 @@
 
       <div class="control-row">
         <div class="control-label">
-          <span class="title">Study Sites De-blur <span class="pro-tag">PRO</span></span>
-          <span class="subtitle">Remove blur on Scribd, Course Hero & papers</span>
+          <span class="title"><span data-i18n="deblurTitle">Study Sites De-blur</span> <span class="pro-tag">PRO</span></span>
+          <span class="subtitle" data-i18n="deblurDesc">Remove blur on Scribd, Course Hero & papers</span>
         </div>
         <label class="switch">
           <input type="checkbox" id="toggleDeblur" checked>
@@ -104,27 +107,31 @@
           <line x1="16" y1="13" x2="8" y2="13"></line>
           <line x1="16" y1="17" x2="8" y2="17"></line>
         </svg>
-        <span>Extract Full Article as Markdown</span>
+        <span data-i18n="extractArticleBtn">Extract Full Article as Markdown</span>
       </button>
     </div>
 
     <!-- Developer Ecosystem Showcase -->
     <div class="cross-promo-card">
       <div class="promo-header">
-        <span class="promo-badge">RECOMMENDED TOOL</span>
-        <span class="promo-author">By Creator</span>
+        <span class="promo-badge" data-i18n="recommendedTool">RECOMMENDED TOOL</span>
+        <span class="promo-author" data-i18n="byCreator">By Creator</span>
       </div>
       <div class="promo-body">
-        <div class="promo-title">Amazon PPC & Profit Optimizer (5-in-1)</div>
-        <p class="promo-desc">Zero ad waste calculator & bulk negative keyword generator for e-commerce sellers.</p>
-        <a href="https://gumroad.com" target="_blank" class="promo-link" id="linkCrossPromo">Learn More &rarr;</a>
+        <div class="promo-title" data-i18n="promoTitle">Amazon PPC & Profit Optimizer (5-in-1)</div>
+        <p class="promo-desc" data-i18n="promoDesc">Zero ad waste calculator & bulk negative keyword generator for e-commerce sellers.</p>
+        <a href="https://mofengjin.gumroad.com/l/nwkpup" target="_blank" class="promo-link" id="linkCrossPromo" data-i18n="learnMore">Learn More &rarr;</a>
       </div>
     </div>
 
     <!-- Footer -->
     <footer class="app-footer">
-      <span>EasyCopy PRO v1.0.0</span>
-      <span>100% Offline & Private</span>
+      <div class="footer-left">
+        <span>EasyCopy PRO v1.0.1</span>
+        <span class="dot-divider">·</span>
+        <button class="btn-footer-sponsor" id="btnOpenSponsor" data-i18n="btnSponsor">请喝阔乐</button>
+      </div>
+      <span class="footer-privacy" data-i18n="footerOffline">100% Offline & Private</span>
     </footer>
   </div>
 
@@ -132,19 +139,39 @@
   <div class="modal-overlay" id="licenseModal">
     <div class="modal-content">
       <div class="modal-header">
-        <h3>Unlock PRO Lifetime Access</h3>
+        <h3 data-i18n="modalTitle">Unlock PRO Lifetime Access</h3>
         <button class="btn-close" id="btnCloseModal">&times;</button>
       </div>
       <div class="modal-body">
-        <p class="modal-desc">Enter your Gumroad license key below to unlock Study Sites De-blur, One-Click Article Extractor and priority updates.</p>
+        <p class="modal-desc" data-i18n="modalDesc">Enter your Gumroad license key below to unlock Study Sites De-blur, One-Click Article Extractor and priority updates.</p>
         <div class="input-group">
           <input type="text" id="inputLicenseKey" placeholder="EASYPRO-XXXX-XXXX-XXXX" spellcheck="false" autocomplete="off">
         </div>
         <div class="modal-actions">
-          <button class="btn-primary" id="btnSubmitLicense">Activate License</button>
-          <a href="https://gumroad.com" target="_blank" class="btn-secondary" id="btnGetLicense">Get Key on Gumroad ($9.99)</a>
+          <button class="btn-primary" id="btnSubmitLicense" data-i18n="modalActivateBtn">Activate License</button>
+          <a href="https://mofengjin.gumroad.com/l/easycopy-pro" target="_blank" class="btn-secondary" id="btnGetLicense" data-i18n="modalGetLicenseBtn">Get Key on Gumroad ($4.99)</a>
         </div>
         <div class="modal-status" id="licenseModalStatus"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sponsor / Donate Modal -->
+  <div class="modal-overlay" id="sponsorModal">
+    <div class="modal-content modal-sponsor-content">
+      <div class="modal-header">
+        <h3 data-i18n="sponsorTitle">请作者喝瓶冰阔乐吧！</h3>
+        <button class="btn-close" id="btnCloseSponsorModal">&times;</button>
+      </div>
+      <div class="modal-body modal-sponsor-body">
+        <p class="modal-desc" data-i18n="sponsorDesc">感谢您的使用与支持！如果 EasyCopy PRO 帮到了您，欢迎扫码请作者喝瓶冰阔乐，您的鼓励是持续维护的最大动力！</p>
+        <div class="sponsor-qr-card">
+          <div class="sponsor-qr-tag" data-i18n="sponsorWeChatTitle">微信扫码赞赏</div>
+          <img src="../assets/wechat_sponsor.png" alt="WeChat Sponsor QR" class="sponsor-qr-img">
+        </div>
+        <div class="modal-actions">
+          <a href="https://mofengjin.gumroad.com/l/easycopy-pro" target="_blank" class="btn-secondary btn-gumroad-sponsor" id="btnGumroadSponsor" data-i18n="sponsorGumroadBtn">海外赞助通道 Gumroad (Pay What You Want)</a>
+        </div>
       </div>
     </div>
   </div>

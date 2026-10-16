@@ -1,0 +1,115 @@
+{
+  "extensionName": {
+    "message": "EasyCopy PRO：网页右键与防复制破解器",
+    "description": "扩展名称"
+  },
+  "extensionDescription": {
+    "message": "一键解除网页右键限制、自由选中文字、防复制破解与网申表单强制粘贴（支持文库去模糊、无版权尾巴纯净复制）。",
+    "description": "扩展描述"
+  },
+  "statusActive": {
+    "message": "运行中"
+  },
+  "statusDisabled": {
+    "message": "已关闭"
+  },
+  "tagline": {
+    "message": "全网文本选中与右键复制解锁器"
+  },
+  "freeTier": {
+    "message": "免费标准版"
+  },
+  "freeTierDesc": {
+    "message": "基础网页解锁功能已开启"
+  },
+  "proTier": {
+    "message": "PRO 尊享商业版"
+  },
+  "proTierDesc": {
+    "message": "全套高级破解引擎已全部激活"
+  },
+  "btnActivatePro": {
+    "message": "激活 PRO"
+  },
+  "btnActivated": {
+    "message": "已激活"
+  },
+  "masterProtectionTitle": {
+    "message": "核心总开关"
+  },
+  "masterProtectionDesc": {
+    "message": "一键启用全部破除限制功能"
+  },
+  "cleanCopyTitle": {
+    "message": "纯净剪贴板复制"
+  },
+  "cleanCopyDesc": {
+    "message": "自动剔除版权尾巴与垃圾跟踪参数"
+  },
+  "forcePasteTitle": {
+    "message": "万能强制粘贴 (破除限制)"
+  },
+  "forcePasteDesc": {
+    "message": "允许在受限的考试输入框与求职网申表单中粘贴"
+  },
+  "floatingPillTitle": {
+    "message": "划词快捷气泡"
+  },
+  "floatingPillDesc": {
+    "message": "划词后平滑淡出复制小图标"
+  },
+  "deblurTitle": {
+    "message": "付费文库一键去模糊"
+  },
+  "deblurDesc": {
+    "message": "移除文库论文中的虚化遮罩与模糊滤镜"
+  },
+  "extractArticleBtn": {
+    "message": "整篇长文一键导出为纯净 Markdown"
+  },
+  "recommendedTool": {
+    "message": "官方推荐工具"
+  },
+  "byCreator": {
+    "message": "开发者精选"
+  },
+  "promoTitle": {
+    "message": "亚马逊广告死词与利润双核清道夫 (5合1)"
+  },
+  "promoDesc": {
+    "message": "跨境卖家广告预算零浪费诊断工具与大批量否定关键词生成器。"
+  },
+  "learnMore": {
+    "message": "了解更多 &rarr;"
+  },
+  "footerOffline": {
+    "message": "100% 本地离线执行 · 隐私零泄露"
+  },
+  "modalTitle": {
+    "message": "激活 PRO 尊享版终身授权"
+  },
+  "modalDesc": {
+    "message": "输入您的 Gumroad 激活码，解锁付费文库去模糊、长文一键导出 Markdown 及优先技术更新。"
+  },
+  "modalActivateBtn": {
+    "message": "立即激活授权"
+  },
+  "modalGetLicenseBtn": {
+    "message": "在 Gumroad 赞助获取授权码 ($4.99)"
+  },
+  "btnSponsor": {
+    "message": "请喝阔乐"
+  },
+  "sponsorTitle": {
+    "message": "请作者喝瓶冰阔乐吧！"
+  },
+  "sponsorDesc": {
+    "message": "感谢您的使用与支持！如果 EasyCopy PRO 帮到了您，欢迎扫码请作者喝瓶冰阔乐，您的鼓励是持续维护的最大动力！"
+  },
+  "sponsorWeChatTitle": {
+    "message": "微信扫码赞赏"
+  },
+  "sponsorGumroadBtn": {
+    "message": "海外赞助通道 Gumroad (Pay What You Want)"
+  }
+}

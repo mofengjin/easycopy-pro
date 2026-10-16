@@ -1,0 +1,115 @@
+{
+  "extensionName": {
+    "message": "EasyCopy PRO: Right Click & Copy Unlocker",
+    "description": "The name of the extension."
+  },
+  "extensionDescription": {
+    "message": "Unlock right-click, text selection, copy & force paste on restricted sites (Scribd, Course Hero, Medium & online tests).",
+    "description": "The description of the extension."
+  },
+  "statusActive": {
+    "message": "Active"
+  },
+  "statusDisabled": {
+    "message": "Disabled"
+  },
+  "tagline": {
+    "message": "Universal Selection & Copy Unlocker"
+  },
+  "freeTier": {
+    "message": "FREE EDITION"
+  },
+  "freeTierDesc": {
+    "message": "Standard web unlocking enabled"
+  },
+  "proTier": {
+    "message": "PRO LIFETIME ACCESS"
+  },
+  "proTierDesc": {
+    "message": "All premium unlocking engines activated"
+  },
+  "btnActivatePro": {
+    "message": "Activate PRO"
+  },
+  "btnActivated": {
+    "message": "Activated"
+  },
+  "masterProtectionTitle": {
+    "message": "Master Protection"
+  },
+  "masterProtectionDesc": {
+    "message": "Enable all unlocking features"
+  },
+  "cleanCopyTitle": {
+    "message": "Clean Clipboard Copy"
+  },
+  "cleanCopyDesc": {
+    "message": "Strip copyright notice tails & tracking spam"
+  },
+  "forcePasteTitle": {
+    "message": "Force Paste (Bypass Limits)"
+  },
+  "forcePasteDesc": {
+    "message": "Allow pasting in restricted forms, ATS & tests"
+  },
+  "floatingPillTitle": {
+    "message": "Quick Floating Bubble"
+  },
+  "floatingPillDesc": {
+    "message": "Show auto-fading copy bubble on text select"
+  },
+  "deblurTitle": {
+    "message": "Study Sites De-blur"
+  },
+  "deblurDesc": {
+    "message": "Remove blur on Scribd, Course Hero & papers"
+  },
+  "extractArticleBtn": {
+    "message": "Extract Full Article as Markdown"
+  },
+  "recommendedTool": {
+    "message": "RECOMMENDED TOOL"
+  },
+  "byCreator": {
+    "message": "By Creator"
+  },
+  "promoTitle": {
+    "message": "Amazon PPC & Profit Optimizer (5-in-1)"
+  },
+  "promoDesc": {
+    "message": "Zero ad waste calculator & bulk negative keyword generator for e-commerce sellers."
+  },
+  "learnMore": {
+    "message": "Learn More &rarr;"
+  },
+  "footerOffline": {
+    "message": "100% Offline & Private"
+  },
+  "modalTitle": {
+    "message": "Unlock PRO Lifetime Access"
+  },
+  "modalDesc": {
+    "message": "Enter your Gumroad license key below to unlock Study Sites De-blur, One-Click Article Extractor and priority updates."
+  },
+  "modalActivateBtn": {
+    "message": "Activate License"
+  },
+  "modalGetLicenseBtn": {
+    "message": "Get Key on Gumroad ($4.99)"
+  },
+  "btnSponsor": {
+    "message": "Sponsor"
+  },
+  "sponsorTitle": {
+    "message": "Support the Creator"
+  },
+  "sponsorDesc": {
+    "message": "If EasyCopy PRO has helped you, buy the creator a cold soda or support via WeChat / Gumroad!"
+  },
+  "sponsorWeChatTitle": {
+    "message": "WeChat Pay (Scan to Sponsor)"
+  },
+  "sponsorGumroadBtn": {
+    "message": "Support on Gumroad (Pay What You Want)"
+  }
+}

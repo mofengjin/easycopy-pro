@@ -1,0 +1,115 @@
+{
+  "extensionName": {
+    "message": "EasyCopy PRO：右クリック＆コピー制限解除",
+    "description": "拡張機能の名前"
+  },
+  "extensionDescription": {
+    "message": "ウェブサイトの右クリック禁止、テキスト選択制限、コピーガードおよび貼り付け制限をワンクリックで解除します。",
+    "description": "拡張機能の説明"
+  },
+  "statusActive": {
+    "message": "有効"
+  },
+  "statusDisabled": {
+    "message": "無効"
+  },
+  "tagline": {
+    "message": "強力なテキスト選択＆コピー解除ツール"
+  },
+  "freeTier": {
+    "message": "無料版"
+  },
+  "freeTierDesc": {
+    "message": "標準のウェブ解除機能が有効です"
+  },
+  "proTier": {
+    "message": "PRO 無期限アクセス"
+  },
+  "proTierDesc": {
+    "message": "すべてのプレミアム解除エンジンが有効化されました"
+  },
+  "btnActivatePro": {
+    "message": "PROを有効化"
+  },
+  "btnActivated": {
+    "message": "有効化済み"
+  },
+  "masterProtectionTitle": {
+    "message": "メイン保護"
+  },
+  "masterProtectionDesc": {
+    "message": "すべての解除機能を一括で有効化"
+  },
+  "cleanCopyTitle": {
+    "message": "クリーンコピー"
+  },
+  "cleanCopyDesc": {
+    "message": "著作権表記や追跡パラメータを自動除去"
+  },
+  "forcePasteTitle": {
+    "message": "強制ペースト (制限解除)"
+  },
+  "forcePasteDesc": {
+    "message": "貼り付け禁止のテストやフォームでも貼り付け可能"
+  },
+  "floatingPillTitle": {
+    "message": "クイックフローティングボタン"
+  },
+  "floatingPillDesc": {
+    "message": "テキスト選択時に便利なコピーボタンを表示"
+  },
+  "deblurTitle": {
+    "message": "文書サイトのぼかし解除"
+  },
+  "deblurDesc": {
+    "message": "ScribdやCourse Heroのぼかしフィルターを解除"
+  },
+  "extractArticleBtn": {
+    "message": "記事全体をMarkdownとして抽出"
+  },
+  "recommendedTool": {
+    "message": "おすすめツール"
+  },
+  "byCreator": {
+    "message": "開発者おすすめ"
+  },
+  "promoTitle": {
+    "message": "Amazon PPC＆利益最適化ツール (5-in-1)"
+  },
+  "promoDesc": {
+    "message": "ECセラー向けの無駄な広告費削減および除外キーワード一括生成ツール。"
+  },
+  "learnMore": {
+    "message": "詳細を見る &rarr;"
+  },
+  "footerOffline": {
+    "message": "100% オフライン＆プライバシー保護"
+  },
+  "modalTitle": {
+    "message": "PRO 無期限アクセスを有効化"
+  },
+  "modalDesc": {
+    "message": "Gumroadのライセンスキーを入力して、全機能をアンロックしてください。"
+  },
+  "modalActivateBtn": {
+    "message": "ライセンスを有効化"
+  },
+  "modalGetLicenseBtn": {
+    "message": "Gumroadでキーを取得 ($4.99)"
+  },
+  "btnSponsor": {
+    "message": "作者を支援"
+  },
+  "sponsorTitle": {
+    "message": "作者をサポート"
+  },
+  "sponsorDesc": {
+    "message": "EasyCopy PROがお役に立ちましたら、作者に冷たいコーラを奢るか、プロジェクトを支援してください！"
+  },
+  "sponsorWeChatTitle": {
+    "message": "WeChat Pay (QRコード)"
+  },
+  "sponsorGumroadBtn": {
+    "message": "Gumroadで支援する"
+  }
+}
