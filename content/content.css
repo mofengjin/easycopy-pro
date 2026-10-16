@@ -1,8 +1,9 @@
-/* ==========================================================================
-   EasyCopy PRO: Global Style Injection Engine
-   ========================================================================== */
+/**
+ * EasyCopy - 全网自由复制与网页限制解除核心样式补丁
+ * 严格零 Emoji 规范
+ */
 
-/* 1. Global User-Select Forced Unlock */
+/* 1. 强制恢复文本可选状态与指针样式 */
 html.easycopy-active,
 html.easycopy-active body,
 html.easycopy-active * {
@@ -10,17 +11,15 @@ html.easycopy-active * {
   -moz-user-select: text !important;
   -ms-user-select: text !important;
   user-select: text !important;
-  -webkit-touch-callout: default !important;
 }
 
-/* 2. De-blurring Styles for Academic & Study Platforms (Scribd, Course Hero, Studocu, etc.) */
+/* 1.1 海外文库去模糊 (Scribd, Course Hero, Studocu) */
 html.easycopy-active .blurred_page,
 html.easycopy-active [class*="blurred"],
 html.easycopy-active [class*="blur_"],
 html.easycopy-active [class*="blur-"],
 html.easycopy-active [style*="filter: blur"],
-html.easycopy-active [style*="filter:blur"],
-html.easycopy-active .unblur-target {
+html.easycopy-active [style*="filter:blur"] {
   filter: none !important;
   -webkit-filter: none !important;
   backdrop-filter: none !important;
@@ -30,87 +29,150 @@ html.easycopy-active .unblur-target {
   user-select: text !important;
 }
 
-/* 3. Global Floating Action Pill (Quick Copy Bubble) */
+/* 2. 解除指针事件穿透拦截与假透明遮罩 */
+html.easycopy-active .easycopy-unlocked-layer {
+  pointer-events: auto !important;
+}
+
+/* 3. 自动隐藏常见文章折叠遮罩、阅读全文遮挡层、强制登录弹窗与收银台全屏遮罩 */
+html.easycopy-active .hide-article-box,
+html.easycopy-active .hide-article-pos,
+html.easycopy-active .read-more-mask,
+html.easycopy-active .open-read-box,
+html.easycopy-active .article-mask,
+html.easycopy-active .btn-readmore,
+html.easycopy-active .fold-panel__mask,
+html.easycopy-active .vip-limit-wrap,
+html.easycopy-active .login-mark,
+html.easycopy-active .tangram-suggestion,
+html.easycopy-active .passport-login-container,
+html.easycopy-active .login-box-container,
+html.easycopy-active [class*="login-dialog"],
+html.easycopy-active [class*="login-modal"],
+html.easycopy-active [class*="vip-guide-dialog"],
+html.easycopy-active #passport-login-pop,
+html.easycopy-active #passport-login-pop-dialog,
+html.easycopy-active [id*="passport-login"],
+html.easycopy-active .tang-pass-pop-login,
+html.easycopy-active [class*="tang-pass-pop-login"],
+html.easycopy-active .pop-mask,
+html.easycopy-active .detain-mask,
+html.easycopy-active .dialog-mask,
+html.easycopy-active .atomic-modal-mask,
+html.easycopy-active .tang-foreground,
+html.easycopy-active .tang-pass-login,
+html.easycopy-active #vip-cashier-v2,
+html.easycopy-active .pay-modal-mask,
+html.easycopy-active .pay-modal-content,
+html.easycopy-active [class*="pay-modal"],
+html.easycopy-active [id*="cashier"],
+html.easycopy-active [class*="cashier"],
+html.easycopy-active .search-result-wrap,
+html.easycopy-active .to-search-wrap,
+html.easycopy-active .search-result-list {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  z-index: -9999 !important;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+}
+
+/* 4. 百度文库黑色复制气泡强行高亮置顶，确保永不被遮挡阻拦 */
+html.easycopy-active #reader-helper,
+html.easycopy-active .copy-v3,
+html.easycopy-active .tips-wrap {
+  z-index: 2147483640 !important;
+  pointer-events: auto !important;
+}
+
+html.easycopy-active .reader-copy-button,
+html.easycopy-active .copy-all-button {
+  color: #FFFFFF !important;
+  opacity: 1 !important;
+  cursor: pointer !important;
+  pointer-events: auto !important;
+  font-weight: 500 !important;
+}
+
+html.easycopy-active .reader-copy-button:hover,
+html.easycopy-active .copy-all-button:hover {
+  color: #60A5FA !important;
+}
+
+/* 4. 强制将被折叠的内容容器高度撑开为完整高度 */
+html.easycopy-active article,
+html.easycopy-active .article_content,
+html.easycopy-active #article_content,
+html.easycopy-active .rich_media_content,
+html.easycopy-active .entry-content,
+html.easycopy-active .post-content,
+html.easycopy-active .content-box,
+html.easycopy-active .markdown-body,
+html.easycopy-active .reader-container,
+html.easycopy-active .mod-doc-content,
+html.easycopy-active .hx-article-content {
+  max-height: none !important;
+  height: auto !important;
+  overflow: visible !important;
+}
+
+/* 5. EasyCopy 原生悬浮极速复制小胶囊 (Floating Copy Pill) */
 #easycopy-floating-pill {
   position: absolute;
-  z-index: 2147483647;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  padding: 6px 14px;
-  background-color: rgba(15, 23, 42, 0.94);
+  z-index: 2147483646;
+  background: #0F172A;
   color: #F8FAFC;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  font-size: 13px;
+  border: 1px solid #3B82F6;
+  border-radius: 6px;
+  padding: 5px 10px;
+  font-size: 12px;
   font-weight: 500;
-  line-height: 1;
-  letter-spacing: 0.02em;
-  border-radius: 9999px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.28), 0 0 0 1px rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
   cursor: pointer;
   user-select: none;
-  pointer-events: none;
-  opacity: 0;
-  transform: translateY(2px) scale(0.96);
-  transition: opacity 0.2s ease, transform 0.2s ease, background-color 0.15s ease;
-  white-space: nowrap;
-}
-
-#easycopy-floating-pill:hover {
-  background-color: #2563EB;
-  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.38), 0 0 0 1px rgba(255, 255, 255, 0.2);
-  transform: translateY(0) scale(1.02);
-}
-
-/* 4. Global Toast Notification */
-.easycopy-toast {
-  position: fixed;
-  top: 24px;
-  left: 50%;
-  transform: translateX(-50%) translateY(0);
-  z-index: 2147483647;
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 10px 20px;
-  background: rgba(15, 23, 42, 0.96);
-  color: #FFFFFF;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  font-size: 13px;
-  font-weight: 500;
-  border-radius: 10px;
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  gap: 6px;
+  transform: scale(0.95);
+  opacity: 0;
   pointer-events: none;
-  animation: easycopyToastIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  transition: opacity 0.25s ease, transform 0.25s ease, background-color 0.15s ease;
 }
 
-.easycopy-toast-fadeout {
-  animation: easycopyToastOut 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+/* 刚选中呼出或鼠标移入保活状态：清晰可见 */
+#easycopy-floating-pill.easycopy-pill-show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1);
 }
 
-@keyframes easycopyToastIn {
-  from {
-    opacity: 0;
-    transform: translateX(-50%) translateY(-10px) scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0) scale(1);
-  }
+/* 失去焦点后的缓慢淡出状态：优雅平滑透明消失 */
+#easycopy-floating-pill.easycopy-pill-fading {
+  opacity: 0;
+  transform: translateY(-4px) scale(0.95);
+  transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1), transform 1.2s ease;
+  pointer-events: auto; /* 淡出过程中依然允许鼠标进入挽救显示 */
 }
 
-@keyframes easycopyToastOut {
-  from {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0) scale(1);
-  }
-  to {
-    opacity: 0;
-    transform: translateX(-50%) translateY(-6px) scale(0.97);
-  }
+/* 鼠标悬停高亮保活 */
+#easycopy-floating-pill:hover {
+  background: #1D4ED8;
+  border-color: #60A5FA;
+  opacity: 1 !important;
+  transform: scale(1.02) !important;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+#easycopy-floating-pill::before {
+  content: "EASYCOPY";
+  background: rgba(59, 130, 246, 0.25);
+  color: #93C5FD;
+  font-size: 10px;
+  padding: 1px 4px;
+  border-radius: 3px;
+  text-transform: uppercase;
 }
