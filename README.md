@@ -10,12 +10,12 @@
 [![License: MIT / Commercial](https://img.shields.io/badge/License-MIT%20%2F%20Commercial-blue.svg)](LICENSE)
 [![Privacy: 100% Offline](https://img.shields.io/badge/Privacy-100%25%20Offline%20In--Memory-success.svg)](#privacy--security)
 [![Platform: Chrome & Edge](https://img.shields.io/badge/Platform-Chrome%20%7C%20Edge%20%7C%20Brave-orange.svg)](#1-minute-installation-guide-chrome--edge)
-[![Gumroad: Pay What You Want](https://img.shields.io/badge/Gumroad-Pay%20What%20You%20Want%20(Free%20%2F%20Sponsor)-brightgreen.svg)](https://mofengjin.gumroad.com/l/easycopy-pro)
+[![Gumroad: Pay What You Want](https://img.shields.io/badge/Gumroad-Pay%20What%20You%20Want%20(Free%20%2F%20Sponsor)-brightgreen.svg)](https://yunlinghui.gumroad.com/l/easycopy-pro)
 [![Sponsor: WeChat Pay](https://img.shields.io/badge/Sponsor-WeChat%20Pay-07C160.svg)](#sponsor--support)
 
 > **Unlock right-click context menus, bypass copy/text selection locks, enable forced paste on online exams/forms, and unblur documents — 100% locally with zero tracking.**
 >
-> **[Instant Access: Download on GitHub Releases or Support on Gumroad](https://mofengjin.gumroad.com/l/easycopy-pro)**
+> **[Instant Access: Download on GitHub Releases or Support on Gumroad](https://yunlinghui.gumroad.com/l/easycopy-pro)**
 
 ### Key Features
 
@@ -65,7 +65,7 @@
 
 If EasyCopy PRO has saved you time or helped in your research, consider supporting the creator:
 
-- **International / Card**: [Gumroad Pay What You Want](https://mofengjin.gumroad.com/l/easycopy-pro)
+- **International / Card**: [Gumroad Pay What You Want](https://yunlinghui.gumroad.com/l/easycopy-pro)
 - **WeChat Pay / 微信赞赏**:
 
 <div align="center">
@@ -139,7 +139,7 @@ If EasyCopy PRO has saved you time or helped in your research, consider supporti
   <p><b>微信扫一扫 · 请作者喝瓶冰阔乐</b></p>
 </div>
 
-- **海外通道**：[Gumroad 赞助入口 (Pay What You Want)](https://mofengjin.gumroad.com/l/easycopy-pro)
+- **海外通道**：[Gumroad 赞助入口 (Pay What You Want)](https://yunlinghui.gumroad.com/l/easycopy-pro)
 
 ### 隐私与安全承诺
 
