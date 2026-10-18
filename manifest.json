@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "EasyCopy - 全网自由复制与网页限制解除专家",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "纯净无广告！一键解除百度文库、知乎、CSDN、360文档等全网网站的禁止复制、禁止右键、禁止选中、关注公众号扫码及登录限制，自动移除版权牛皮癣小尾巴，自动展开全文。",
   "icons": {
     "16": "icons/icon16.png",
