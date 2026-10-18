@@ -717,35 +717,79 @@
   }
 
   /**
-   * 仅针对特定已知文库（百度文库/360doc等）定向隐藏妨碍阅读的特定遮罩，绝不误伤通用网站与登录表单
+   * 仅针对特定已知文库与博客站点（百度文库/知乎/CSDN/360doc等）定向隐藏骚扰弹窗，绝不误伤通用网站与正常登录
    */
   function killLoginModals() {
-    // 敏感认证、登录与管理页面绝对不执行任何弹窗清理
+    // 敏感认证、官方登录与管理后台绝对豁免
     if (isSensitiveAuthPage()) return;
 
     const host = (window.location.hostname || '').toLowerCase();
-    const isTargetDocSite =
-      host.includes('wenku.baidu.com') ||
-      host.includes('360doc.com') ||
-      host.includes('docin.com') ||
-      host.includes('mbalib.com');
 
-    if (!isTargetDocSite) return;
-
-    // 仅在明确的文库域名下执行精准类名隐藏，且绝不物理 remove() 节点
-    const docModalSelectors = [
-      '#passport-login-pop',
-      '#passport-login-pop-dialog',
-      '.tang-pass-pop-login',
-      '#vip-cashier-v2'
-    ];
-
-    docModalSelectors.forEach((sel) => {
-      const els = document.querySelectorAll(sel);
-      els.forEach((el) => {
-        el.style.display = 'none';
+    // 1. 百度文库专属骚扰弹层与充值收银台
+    if (host.includes('wenku.baidu.com')) {
+      const baiduModals = [
+        '#passport-login-pop',
+        '#passport-login-pop-dialog',
+        '.tang-pass-pop-login',
+        '.tang-foreground',
+        '.tang-pass-login',
+        '#vip-cashier-v2',
+        '.pop-mask',
+        '.dialog-mask',
+        '.vip-limit-wrap'
+      ];
+      baiduModals.forEach((sel) => {
+        document.querySelectorAll(sel).forEach((el) => (el.style.display = 'none'));
       });
-    });
+    }
+
+    // 2. CSDN 专属强制登录后复制代码/阅读弹窗
+    if (host.includes('csdn.net')) {
+      const csdnModals = [
+        '.passport-login-container',
+        '.login-mark',
+        '.passport-login-box',
+        '#passportbox'
+      ];
+      csdnModals.forEach((sel) => {
+        document.querySelectorAll(sel).forEach((el) => (el.style.display = 'none'));
+      });
+    }
+
+    // 3. 知乎专属未登录强制登录弹窗 (发现更大的世界)
+    if (host.includes('zhihu.com')) {
+      // 仅在文章阅读页面清理知乎阻挡阅读的登录遮罩，不影响知乎主登录页
+      if (!window.location.pathname.includes('/signin')) {
+        const zhihuModals = [
+          '.Modal-enter-done',
+          '.sign-flow-modal'
+        ];
+        zhihuModals.forEach((sel) => {
+          document.querySelectorAll(sel).forEach((el) => {
+            // 如果弹窗内包含“登录知乎”，精准关闭或隐藏
+            if (el.innerText.includes('登录知乎') || el.innerText.includes('扫码登录')) {
+              const closeBtn = el.querySelector('button.Modal-closeButton');
+              if (closeBtn) closeBtn.click();
+              else el.style.display = 'none';
+            }
+          });
+        });
+      }
+    }
+
+    // 4. 360doc / 道客巴巴 / MBA智库等文档平台
+    if (host.includes('360doc.com') || host.includes('docin.com') || host.includes('mbalib.com')) {
+      const docModals = [
+        '.login_box',
+        '.layer_box',
+        '.mask_layer',
+        '#login_layer',
+        '.reader-dialog'
+      ];
+      docModals.forEach((sel) => {
+        document.querySelectorAll(sel).forEach((el) => (el.style.display = 'none'));
+      });
+    }
 
     if (document.body) {
       document.body.style.overflow = 'auto';
