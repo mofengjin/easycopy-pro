@@ -100,12 +100,11 @@
    * 提示：copy 与 cut 专门交由专职的 hijackClipboardEvents() 统一接管写入与粉碎小尾巴
    */
   function hijackRestrictionEvents() {
+    // 仅拦截真正用于防复制、防右键的关键事件，严禁拦截 dragstart 和 select 以免破坏拖拽、滑块拼图与原生选区
     const restrictionEvents = [
       'contextmenu',
       'selectstart',
-      'select',
-      'beforecopy',
-      'dragstart'
+      'beforecopy'
     ];
 
     restrictionEvents.forEach((eventType) => {
@@ -114,38 +113,50 @@
         (e) => {
           if (!config.enabled) return;
 
-          // 若处于输入框放行自然编辑
+          // 若处于输入框、文本域或富文本编辑器，100% 放行自然交互
           const target = e.target;
           if (
             target &&
             (target.tagName === 'INPUT' ||
               target.tagName === 'TEXTAREA' ||
-              target.isContentEditable)
+              target.isContentEditable ||
+              (target.closest && target.closest('[contenteditable="true"]')))
           ) {
             return;
           }
 
-          // 核心绝招：立即终止网站流氓脚本的后续捕获与冒泡
+          // 核心绝招：立即终止网站流氓脚本对右键和选择的恶意拦截
           e.stopImmediatePropagation();
         },
         true // 强行挂载在 window 捕获阶段最顶层
       );
     });
 
-    // 拦截部分网站通过键盘快捷键 (如 Ctrl+C, Ctrl+A) 的拦截
+    // 智能处理键盘快捷键 (如 Ctrl+C)，处于输入框中时绝对不干涉浏览器原生操作
     window.addEventListener(
       'keydown',
       (e) => {
         if (!config.enabled) return;
+
+        // 如果用户正在表单、输入框或富文本编辑器内打字，完全放行所有系统快捷键
+        const target = e.target;
+        if (
+          target &&
+          (target.tagName === 'INPUT' ||
+            target.tagName === 'TEXTAREA' ||
+            target.isContentEditable ||
+            (target.closest && target.closest('[contenteditable="true"]')))
+        ) {
+          return;
+        }
+
         if ((e.ctrlKey || e.metaKey) && (e.key === 'c' || e.key === 'C')) {
-          e.stopImmediatePropagation();
           const selText = getEffectiveSelectedText();
           if (selText && selText.length > 0) {
+            e.stopImmediatePropagation();
             copyTextToClipboard(selText);
             showCopyNotification(`已成功纯净复制 ${selText.length} 个字符 (Ctrl+C)`);
           }
-        } else if ((e.ctrlKey || e.metaKey) && (e.key === 'a' || e.key === 'A')) {
-          e.stopImmediatePropagation();
         }
       },
       true
@@ -278,6 +289,7 @@
    */
   function cleanStudySiteRestrictions() {
     if (!config.enabled || config.deblurStudySites === false) return;
+    if (isSensitiveAuthPage()) return;
 
     // 清除各类毛玻璃模糊滤镜
     const blurredEls = document.querySelectorAll('.blurred_page, [class*="blurred"], [class*="blur_"], [class*="blur-"], [style*="filter: blur"], [style*="filter:blur"]');
@@ -298,7 +310,7 @@
   }
 
   /**
-   * 核心核武器：全局截胡百度文库、知乎等网站自带悬浮气泡里的【复制】与【复制全文】点击
+   * 核心大招：在特定文档阅读场景截胡特定悬浮气泡里的【复制】与【复制全文】点击
    * 彻底阻断其未登录/付费弹窗逻辑，直接把文本拷入剪贴板！
    */
   function hijackPageCopyButtons() {
@@ -306,6 +318,8 @@
       'click',
       (e) => {
         if (!config.enabled) return;
+        // 敏感页面、认证后台绝对不干预任何点击事件
+        if (isSensitiveAuthPage()) return;
 
         const target = e.target;
         if (!target) return;
@@ -679,44 +693,57 @@
   }
 
   /**
-   * 强行秒杀百度文库/知乎/CSDN等网站的未登录弹窗与遮罩
+   * 判定当前页面是否为敏感的认证/登录/控制台页面
+   * 在此类页面中，必须 100% 豁免任何 DOM 弹窗移除或页面元素隐藏，确保业务表单完好无损
+   */
+  function isSensitiveAuthPage() {
+    const host = (window.location.hostname || '').toLowerCase();
+    const path = (window.location.pathname || '').toLowerCase();
+    return (
+      host.includes('account.') ||
+      host.includes('login.') ||
+      host.includes('auth.') ||
+      host.includes('signin.') ||
+      host.includes('sso.') ||
+      host.includes('pass.') ||
+      host.includes('console.') ||
+      host.includes('myseller.') ||
+      host.includes('alipay.') ||
+      path.includes('/login') ||
+      path.includes('/signin') ||
+      path.includes('/auth') ||
+      path.includes('/oauth')
+    );
+  }
+
+  /**
+   * 仅针对特定已知文库（百度文库/360doc等）定向隐藏妨碍阅读的特定遮罩，绝不误伤通用网站与登录表单
    */
   function killLoginModals() {
-    const modalSelectors = [
-      '.tangram-suggestion',
-      '.login-dialog',
-      '.login-box-container',
-      '.passport-login-container',
-      '.vip-guide-dialog',
-      '.vip-limit-wrap',
-      '.login-mark',
-      '[class*="login-dialog"]',
-      '[class*="login-modal"]',
-      '[class*="login-wrap"]',
+    // 敏感认证、登录与管理页面绝对不执行任何弹窗清理
+    if (isSensitiveAuthPage()) return;
+
+    const host = (window.location.hostname || '').toLowerCase();
+    const isTargetDocSite =
+      host.includes('wenku.baidu.com') ||
+      host.includes('360doc.com') ||
+      host.includes('docin.com') ||
+      host.includes('mbalib.com');
+
+    if (!isTargetDocSite) return;
+
+    // 仅在明确的文库域名下执行精准类名隐藏，且绝不物理 remove() 节点
+    const docModalSelectors = [
       '#passport-login-pop',
       '#passport-login-pop-dialog',
-      '[id*="passport-login"]',
       '.tang-pass-pop-login',
-      '.pop-mask',
-      '.detain-mask',
-      '.dialog-mask',
-      '.atomic-modal-mask',
-      '#vip-cashier-v2',
-      '.pay-modal-mask',
-      '.pay-modal-content',
-      '[class*="pay-modal"]',
-      '[id*="cashier"]',
-      '[class*="cashier"]',
-      '.search-result-wrap',
-      '.to-search-wrap',
-      '.search-result-list'
+      '#vip-cashier-v2'
     ];
 
-    modalSelectors.forEach((sel) => {
+    docModalSelectors.forEach((sel) => {
       const els = document.querySelectorAll(sel);
       els.forEach((el) => {
         el.style.display = 'none';
-        el.remove();
       });
     });
 
@@ -736,22 +763,29 @@
       autoExpandArticles();
     }
 
-    // 启动 MutationObserver 监听动态插入的内容与弹窗
+    // 启动 MutationObserver 监听动态插入的内容（带 200ms 防抖，杜绝死循环卡顿）
+    let debounceTimer = null;
     const observer = new MutationObserver(() => {
-      cleanInlineStyles();
-      killLoginModals();
-      cleanStudySiteRestrictions();
-      if (config.autoExpandArticle) {
-        autoExpandArticles();
-      }
+      if (debounceTimer) return;
+      debounceTimer = setTimeout(() => {
+        debounceTimer = null;
+        cleanInlineStyles();
+        killLoginModals();
+        cleanStudySiteRestrictions();
+        if (config.autoExpandArticle) {
+          autoExpandArticles();
+        }
+      }, 200);
     });
 
-    observer.observe(document.body || document.documentElement, {
-      childList: true,
-      subtree: true,
-      attributes: true,
-      attributeFilter: ['style', 'class']
-    });
+    if (document.body || document.documentElement) {
+      observer.observe(document.body || document.documentElement, {
+        childList: true,
+        subtree: true,
+        attributes: true,
+        attributeFilter: ['style', 'class']
+      });
+    }
   }
 
   /**
@@ -773,6 +807,9 @@
    * 自动展开知乎、CSDN、百度文库、简书等平台的“阅读全文”折叠层
    */
   function autoExpandArticles() {
+    // 登录认证与控制台页面坚决不执行自动展开点击
+    if (isSensitiveAuthPage()) return;
+
     const expandSelectors = [
       '.btn-readmore',
       '.read-more-btn',
@@ -781,14 +818,10 @@
       '.unfold-btn',
       '.open-read-box',
       '.article-readmore',
-      '.btn-more',
       '.expand-all',
       '.fold-page-text',
       '.read-all',
-      '.more-btn',
-      'button[data-click*="readmore"]',
-      'div[class*="readMore"]',
-      'div[class*="showMore"]'
+      'button[data-click*="readmore"]'
     ];
 
     expandSelectors.forEach((sel) => {

@@ -34,7 +34,7 @@ html.easycopy-active .easycopy-unlocked-layer {
   pointer-events: auto !important;
 }
 
-/* 3. 自动隐藏常见文章折叠遮罩、阅读全文遮挡层、强制登录弹窗与收银台全屏遮罩 */
+/* 3. 自动隐藏特定文章折叠遮罩与阅读全文遮挡层 (精简安全版，杜绝误伤正常网站登录弹窗) */
 html.easycopy-active .hide-article-box,
 html.easycopy-active .hide-article-pos,
 html.easycopy-active .read-more-mask,
@@ -42,40 +42,12 @@ html.easycopy-active .open-read-box,
 html.easycopy-active .article-mask,
 html.easycopy-active .btn-readmore,
 html.easycopy-active .fold-panel__mask,
-html.easycopy-active .vip-limit-wrap,
-html.easycopy-active .login-mark,
-html.easycopy-active .tangram-suggestion,
-html.easycopy-active .passport-login-container,
-html.easycopy-active .login-box-container,
-html.easycopy-active [class*="login-dialog"],
-html.easycopy-active [class*="login-modal"],
-html.easycopy-active [class*="vip-guide-dialog"],
 html.easycopy-active #passport-login-pop,
-html.easycopy-active #passport-login-pop-dialog,
-html.easycopy-active [id*="passport-login"],
-html.easycopy-active .tang-pass-pop-login,
-html.easycopy-active [class*="tang-pass-pop-login"],
-html.easycopy-active .pop-mask,
-html.easycopy-active .detain-mask,
-html.easycopy-active .dialog-mask,
-html.easycopy-active .atomic-modal-mask,
-html.easycopy-active .tang-foreground,
-html.easycopy-active .tang-pass-login,
-html.easycopy-active #vip-cashier-v2,
-html.easycopy-active .pay-modal-mask,
-html.easycopy-active .pay-modal-content,
-html.easycopy-active [class*="pay-modal"],
-html.easycopy-active [id*="cashier"],
-html.easycopy-active [class*="cashier"],
-html.easycopy-active .search-result-wrap,
-html.easycopy-active .to-search-wrap,
-html.easycopy-active .search-result-list {
+html.easycopy-active #passport-login-pop-dialog {
   display: none !important;
   opacity: 0 !important;
   visibility: hidden !important;
   pointer-events: none !important;
-  z-index: -9999 !important;
-  width: 0 !important;
   height: 0 !important;
   overflow: hidden !important;
 }
